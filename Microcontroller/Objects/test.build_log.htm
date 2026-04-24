@@ -27,209 +27,20 @@ Project File Date:  03/15/2026
 <h2>Output:</h2>
 *** Using Compiler 'V6.22', folder: 'C:\Users\Drew\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target_1'
-STM32MP_communication.c(60): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-   60 |                                                         USART_Write(USART3, &state_command, 1); //informing linux board we are making a state update
-      |                                                                             ^~~~~~~~~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(61): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-   61 |                                                         USART_Write(USART3, &state1, 1); //state update is 1
-      |                                                                             ^~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(64): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-   64 |                                                         USART_Write(USART3, &state_command, 1);
-      |                                                                             ^~~~~~~~~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(65): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-   65 |                                                         USART_Write(USART3, &reseting, 1);
-      |                                                                             ^~~~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(200): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  200 |                                 USART_Write(USART3, &done_command, 1);
-      |                                                     ^~~~~~~~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(216): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  216 |                                                 USART_Write(USART3, &state_command, 1);
-      |                                                                     ^~~~~~~~~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(217): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  217 |                                                 USART_Write(USART3, &state2, 1);
-      |                                                                     ^~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(235): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  235 |                                                 USART_Write(USART3, &state_command, 1);
-      |                                                                     ^~~~~~~~~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(236): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  236 |                                                 USART_Write(USART3, &state4, 1);
-      |                                                                     ^~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(248): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  248 |                                                                         USART_Write(USART3, &state_command, 1);
-      |                                                                                             ^~~~~~~~~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(249): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  249 |                                                                         USART_Write(USART3, &state3, 1);
-      |                                                                                             ^~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(254): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  254 |                                                                         USART_Write(USART3, &state_command, 1);
-      |                                                                                             ^~~~~~~~~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(255): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  255 |                                                                         USART_Write(USART3, &state4, 1);
-      |                                                                                             ^~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(275): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  275 |                                                                         USART_Write(USART3, &state_command, 1);
-      |                                                                                             ^~~~~~~~~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(276): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  276 |                                                                         USART_Write(USART3, &state2, 1);
-      |                                                                                             ^~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(281): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  281 |                                                                         USART_Write(USART3, &state_command, 1);
-      |                                                                                             ^~~~~~~~~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(282): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  282 |                                                                         USART_Write(USART3, &state4, 1);
-      |                                                                                             ^~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(316): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  316 |                                 USART_Write(USART3, &state_command, 1);
-      |                                                     ^~~~~~~~~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(317): warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-  317 |                                 USART_Write(USART3, &state0, 1);
-      |                                                     ^~~~~~~
-.\jet_cutter.h(45): note: passing argument to parameter 'buffer' here
-   45 | void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
-      |                                                    ^
-STM32MP_communication.c(28): warning: unused variable 'msg' [-Wunused-variable]
-   28 |         uint8_t msg = 0x00;
-      |                 ^~~
-STM32MP_communication.c(24): warning: unused parameter 'argument' [-Wunused-parameter]
-   24 | void STM32MP_communication(void *argument){
-      |                                  ^
-STM32MP_communication.c(327): warning: expression which evaluates to zero treated as a null pointer constant of type 'BaseType_t *' (aka 'long *') [-Wnon-literal-null-conversion]
-  327 |         xQueueSendFromISR(xQueueUART, &msg, pdFALSE);
-      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include\queue.h(1279): note: expanded from macro 'xQueueSendFromISR'
- 1279 |     xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueSEND_TO_BACK )
-      |                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-22 warnings generated.
-compiling STM32MP_communication.c...
-compiling usart.c...
-compiling jet_cutter.c...
-Motor_control.c(33): warning: unused parameter 'argument' [-Wunused-parameter]
-   33 | void Motor_control(void *argument){
-      |                          ^
-Motor_control.c(58): warning: comparison of integers of different signs: 'int' and 'size_t' (aka 'unsigned int') [-Wsign-compare]
-   58 |                         for(int loop_counter = 0; loop_counter < number_of_points; loop_counter++){ 
-      |                                                   ~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~
-2 warnings generated.
-compiling Motor_control.c...
-Pressure_washer_control.c(22): warning: unused parameter 'argument' [-Wunused-parameter]
-   22 | void Pressure_washer_control(void *argument){
+Pressure_washer_control.c(24): warning: unused parameter 'argument' [-Wunused-parameter]
+   24 | void Pressure_washer_control(void *argument){
       |                                    ^
-1 warning generated.
+Pressure_washer_control.c(26): warning: implicit conversion from 'int' to 'uint16_t' (aka 'unsigned short') changes value from 102400 to 36864 [-Wconstant-conversion]
+   26 |         uint16_t speed = SPEED_1;
+      |                  ~~~~~   ^~~~~~~
+.\jet_cutter.h(33): note: expanded from macro 'SPEED_1'
+   33 | #define SPEED_1 102400
+      |                 ^~~~~~
+2 warnings generated.
 compiling Pressure_washer_control.c...
-compiling main.c...
-helper.c(135): warning: expression which evaluates to zero treated as a null pointer constant of type 'BaseType_t *' (aka 'long *') [-Wnon-literal-null-conversion]
-  135 |                                                 xQueueOverwriteFromISR(xQueueReset, &reset, pdFALSE);
-      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include\queue.h(1201): note: expanded from macro 'xQueueOverwriteFromISR'
- 1201 |     xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueOVERWRITE )
-      |                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-helper.c(136): warning: expression which evaluates to zero treated as a null pointer constant of type 'BaseType_t *' (aka 'long *') [-Wnon-literal-null-conversion]
-  136 |                                                 xQueueOverwriteFromISR(xQueueXStepPosition, &x_position, pdFALSE);
-      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include\queue.h(1201): note: expanded from macro 'xQueueOverwriteFromISR'
- 1201 |     xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueOVERWRITE )
-      |                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-helper.c(137): warning: expression which evaluates to zero treated as a null pointer constant of type 'BaseType_t *' (aka 'long *') [-Wnon-literal-null-conversion]
-  137 |                                                 xQueueOverwriteFromISR(xQueueYStepPosition, &y_position, pdFALSE);
-      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include\queue.h(1201): note: expanded from macro 'xQueueOverwriteFromISR'
- 1201 |     xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueOVERWRITE )
-      |                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-helper.c(138): warning: expression which evaluates to zero treated as a null pointer constant of type 'BaseType_t *' (aka 'long *') [-Wnon-literal-null-conversion]
-  138 |                                                 xQueueOverwriteFromISR(xQueueZStepPosition, &z_position, pdFALSE);
-      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include\queue.h(1201): note: expanded from macro 'xQueueOverwriteFromISR'
- 1201 |     xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueOVERWRITE )
-      |                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-helper.c(210): warning: expression which evaluates to zero treated as a null pointer constant of type 'BaseType_t *' (aka 'long *') [-Wnon-literal-null-conversion]
-  210 |                                         xQueueOverwriteFromISR(xQueue_Xsteps_counter, &x_steps_counter, pdFALSE);
-      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include\queue.h(1201): note: expanded from macro 'xQueueOverwriteFromISR'
- 1201 |     xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueOVERWRITE )
-      |                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-helper.c(211): warning: expression which evaluates to zero treated as a null pointer constant of type 'BaseType_t *' (aka 'long *') [-Wnon-literal-null-conversion]
-  211 |                                         xQueueOverwriteFromISR(xQueue_Ysteps_counter, &y_steps_counter, pdFALSE);
-      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include\queue.h(1201): note: expanded from macro 'xQueueOverwriteFromISR'
- 1201 |     xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueOVERWRITE )
-      |                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-helper.c(212): warning: expression which evaluates to zero treated as a null pointer constant of type 'BaseType_t *' (aka 'long *') [-Wnon-literal-null-conversion]
-  212 |                                         xQueueOverwriteFromISR(xQueue_reached_state, &reached_state, pdFALSE);
-      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include\queue.h(1201): note: expanded from macro 'xQueueOverwriteFromISR'
- 1201 |     xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueOVERWRITE )
-      |                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-helper.c(213): warning: expression which evaluates to zero treated as a null pointer constant of type 'BaseType_t *' (aka 'long *') [-Wnon-literal-null-conversion]
-  213 |                                         xQueueOverwriteFromISR(xQueueXStepPosition, &x_steps_position, pdFALSE);
-      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include\queue.h(1201): note: expanded from macro 'xQueueOverwriteFromISR'
- 1201 |     xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueOVERWRITE )
-      |                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-helper.c(214): warning: expression which evaluates to zero treated as a null pointer constant of type 'BaseType_t *' (aka 'long *') [-Wnon-literal-null-conversion]
-  214 |                                         xQueueOverwriteFromISR(xQueueYStepPosition, &y_steps_position, pdFALSE);
-      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include\queue.h(1201): note: expanded from macro 'xQueueOverwriteFromISR'
- 1201 |     xQueueGenericSendFromISR( ( xQueue ), ( pvItemToQueue ), ( pxHigherPriorityTaskWoken ), queueOVERWRITE )
-      |                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-9 warnings generated.
-compiling helper.c...
 linking...
-Program Size: Code=23058 RO-data=714 RW-data=8 ZI-data=37944  
-".\Objects\test.axf" - 0 Error(s), 34 Warning(s).
+Program Size: Code=24150 RO-data=714 RW-data=8 ZI-data=37944  
+".\Objects\test.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -284,20 +95,20 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:RTOS2:FreeRTOS&Cortex-M@11.1.0
       Source file:   CMSIS/RTOS2/FreeRTOS/Source/clib_os.c
-      Include file:  CMSIS/RTOS2/FreeRTOS/Include/freertos_mpool.h
       Source file:   CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c
+      Include file:  CMSIS/RTOS2/FreeRTOS/Include/freertos_mpool.h
 
    * Component: ARM::RTOS&FreeRTOS:Config&CMSIS RTOS2@11.1.0
       Include file:  CMSIS/RTOS2/FreeRTOS/Config/FreeRTOSConfig.h
 
    * Component: ARM::RTOS&FreeRTOS:Core&Cortex-M@11.1.0
-      Include file:  Source/include/FreeRTOS.h
       Include file:  Source/include/queue.h
+      Source file:   Source/list.c
+      Include file:  Source/include/FreeRTOS.h
       Include file:  Source/include/semphr.h
       Include file:  Source/include/task.h
-      Source file:   Source/list.c
-      Source file:   Source/tasks.c
       Source file:   Source/queue.c
+      Source file:   Source/tasks.c
       Source file:   Source/portable/GCC/ARM_CM4F/port.c
       Source file:   CMSIS/RTOS2/FreeRTOS/Source/freertos_evr.c
 
@@ -309,14 +120,14 @@ Package Vendor: Keil
       Source file:   Source/portable/MemMang/heap_4.c
 
    * Component: ARM::RTOS&FreeRTOS:Timers@11.1.0
-      Include file:  Source/include/timers.h
       Source file:   Source/timers.c
+      Include file:  Source/include/timers.h
 
    * Component: Keil::Device:Startup@1.3.2
-      Include file:  Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h
       Source file:   MDK/Device/Source/ARM/STM32L4xx_DB_OPT.s
-      Source file:   Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/system_stm32l4xx.c
+      Include file:  Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/arm/startup_stm32l476xx.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/system_stm32l4xx.c
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

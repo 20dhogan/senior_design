@@ -17,7 +17,8 @@ extern QueueHandle_t xQueue_x_cw;
 extern QueueHandle_t xQueue_y_cw;
 extern QueueHandle_t xQueue_cutting_complete;
 extern uint16_t g_total_tools;
-extern uint32_t *g_tool_end_indices;
+extern Tool_t   *g_tools;
+extern QueueHandle_t xQueue_pressure_washer_on; 
 
 static void send_progress_update(uint16_t completed_tools, uint16_t total_tools){
 	uint8_t frame[6];
@@ -44,122 +45,101 @@ void Motor_control(void *argument){
 	bool x_cw = true;
 	bool y_cw = true;
 	bool reached_state = true;
+	bool pressure_washer_on = false;
 	
-	while(1){		
+	while(1){	
 		xQueuePeek(xQueueState, &state, 100);
 		
-		if((state == 2) || (state == 3)){
+		if(state == 2){
 			
-		size_t number_of_points = g_toolpath.count;
-		uint16_t next_tool_to_report = 0;
-		uint16_t current_tool_for_delay = 0;
-		int32_t last_completed_point = -1;
-			
-			for(int loop_counter = 0; loop_counter < number_of_points; loop_counter++){ 
+			bool abort_cutting = false;
 
-				//Wait until previous segment is complete before planning next one
-				while(reached_state == false){
-					xQueuePeek(xQueue_reached_state, &reached_state, pdMS_TO_TICKS(1));
-					xQueuePeek(xQueueState, &state, 0);
-					if((state != 2) && (state != 3)){
+			for(uint16_t tool_i = 0; tool_i < g_total_tools && !abort_cutting; tool_i++){
+				uint16_t num_pts = g_tools[tool_i].count;
+
+				for(uint16_t pt_j = 0; pt_j < num_pts && !abort_cutting; pt_j++){
+
+					//Wait until previous segment is complete before planning next one
+					while(reached_state == false){
+						xQueuePeek(xQueue_reached_state, &reached_state, pdMS_TO_TICKS(1));
+						xQueuePeek(xQueueState, &state, 0);
+						if(state == 3){
+							//Hold while paused; the timer ISR is not advancing in state 3.
+							vTaskDelay(pdMS_TO_TICKS(1));
+							continue;
+						}
+						if(state != 2){
+							abort_cutting = true;
+							break;
+						}
+					}
+					if(abort_cutting){
 						break;
 					}
-				}
-				if((state != 2) && (state != 3)){
-					break;
-				}
 
-				if((loop_counter > 0) && (g_tool_end_indices != NULL)){
-					last_completed_point = loop_counter - 1;
-					uint32_t prev = (uint32_t)last_completed_point;
+					// Arrived at last point of previous tool: pause then report progress
+					if(pt_j == 0 && tool_i > 0){
+						pressure_washer_on = false;
+						xQueueOverwrite(xQueue_pressure_washer_on, &pressure_washer_on);
+						vTaskDelay(pdMS_TO_TICKS(MS_DELAY_INBETWEEN_TOOLS));
+						send_progress_update(tool_i, g_total_tools);
+					}
 
-					// Pause after arriving at the first point of each tool
-					uint32_t tool_first = (current_tool_for_delay == 0) ? 0 :
-										 (g_tool_end_indices[current_tool_for_delay - 1] + 1);
-					if(prev == tool_first){
+					// Arrived at first point of current tool: pause before cutting
+					if(pt_j == 1){
+						pressure_washer_on = true;
+						xQueueOverwrite(xQueue_pressure_washer_on, &pressure_washer_on);	
 						vTaskDelay(pdMS_TO_TICKS(MS_DELAY_INBETWEEN_TOOLS));
 					}
-
-					// Pause after the last point of each tool is complete
-					if((current_tool_for_delay < g_total_tools) && (prev == g_tool_end_indices[current_tool_for_delay])){
-						vTaskDelay(pdMS_TO_TICKS(MS_DELAY_INBETWEEN_TOOLS));
-						current_tool_for_delay++;
-					}
-
-					while((next_tool_to_report < g_total_tools) &&
-							((uint32_t)last_completed_point >= g_tool_end_indices[next_tool_to_report])){
-						next_tool_to_report++;
-						send_progress_update(next_tool_to_report, g_total_tools);
-					}
-				}
-			
-				//access tool points
-				next_x_point = g_toolpath.points[loop_counter].x;
-				next_y_point = g_toolpath.points[loop_counter].y;
-					
-				//calculate how many x and y steps need to be taken based on previous points
-				if (xQueuePeek(xQueueXStepPosition, &x_steps_position, pdMS_TO_TICKS(100)) != pdPASS) {
-					continue;
-				}
-				if (xQueuePeek(xQueueYStepPosition, &y_steps_position, pdMS_TO_TICKS(100)) != pdPASS) {
-					continue;
-				}
-				//X steps
-				if(next_x_point > x_steps_position){
-					//this means the x motor needs to turn CCW
-					//This means we need to go forward in the x direction
-					x_steps_to_move = next_x_point - x_steps_position;
-					x_cw = false;
-					
-				} else {
-					//This means we need to go backwards in the x direction
-					x_steps_to_move = x_steps_position - next_x_point;
-					x_cw = true;
-				}
 				
-				//Y steps
-				if(next_y_point > y_steps_position){
-					//this means we need to go CW
-					//This means we need to go forward in the y direction
-					y_steps_to_move = next_y_point - y_steps_position;
-					y_cw = true;
-					
-				} else {
-					//This means we need to go backwards in the x direction
-					y_steps_to_move = y_steps_position - next_y_point;
-					y_cw = false;
-				}
-				
-				//determine the number of interrupts the next move will be spread over		
-				number_of_ticks = (uint32_t)sqrt((double)x_steps_to_move * x_steps_to_move + 
-				(double)y_steps_to_move * y_steps_to_move); //THIS WILL BE FLOORED
-				
-				//If the number of ticks are zero then we are already at our target
-				//skip to the next point
-				if(number_of_ticks == 0){
-					continue;  // skip to next point in the loop
-				}
+					//access tool point
+					next_x_point = g_tools[tool_i].points[pt_j].x;
+					next_y_point = g_tools[tool_i].points[pt_j].y;
 						
-				//Now that we have reached the state we can update all information in queues
-				xQueueOverwrite(xQueue_Xsteps_to_move , &x_steps_to_move);
-				xQueueOverwrite(xQueue_Ysteps_to_move , &y_steps_to_move);
-				xQueueOverwrite(xQueue_number_of_ticks, &number_of_ticks);
-				xQueueOverwrite(xQueue_x_cw, &x_cw);
-				xQueueOverwrite(xQueue_y_cw, &y_cw);
-				x_steps_counter = 0;
-				y_steps_counter = 0;
-				xQueueOverwrite(xQueue_Xsteps_counter, &x_steps_counter);
-				xQueueOverwrite(xQueue_Ysteps_counter, &y_steps_counter);
-				
-				
-				//update state to not reached
-				reached_state = false;
-				xQueueOverwrite(xQueue_reached_state, &reached_state);
-				
-				//if state != 2 or 3 exit loop
-				xQueuePeek(xQueueState, &state, 100);
-				if((state != 2) && (state != 3)){
-					break;
+					//calculate steps from current position
+					if(xQueuePeek(xQueueXStepPosition, &x_steps_position, pdMS_TO_TICKS(100)) != pdPASS) continue;
+					if(xQueuePeek(xQueueYStepPosition, &y_steps_position, pdMS_TO_TICKS(100)) != pdPASS) continue;
+
+					if(next_x_point > x_steps_position){
+						x_steps_to_move = next_x_point - x_steps_position;
+						x_cw = false;
+					} else {
+						x_steps_to_move = x_steps_position - next_x_point;
+						x_cw = true;
+					}
+
+					if(next_y_point > y_steps_position){
+						y_steps_to_move = next_y_point - y_steps_position;
+						y_cw = true;
+					} else {
+						y_steps_to_move = y_steps_position - next_y_point;
+						y_cw = false;
+					}
+
+					number_of_ticks = (uint32_t)sqrt((double)x_steps_to_move * x_steps_to_move +
+													(double)y_steps_to_move * y_steps_to_move);
+
+					if(number_of_ticks == 0){
+						continue;	
+					}
+
+					xQueueOverwrite(xQueue_Xsteps_to_move , &x_steps_to_move);
+					xQueueOverwrite(xQueue_Ysteps_to_move , &y_steps_to_move);
+					xQueueOverwrite(xQueue_number_of_ticks, &number_of_ticks);
+					xQueueOverwrite(xQueue_x_cw, &x_cw);
+					xQueueOverwrite(xQueue_y_cw, &y_cw);
+					x_steps_counter = 0;
+					y_steps_counter = 0;
+					xQueueOverwrite(xQueue_Xsteps_counter, &x_steps_counter);
+					xQueueOverwrite(xQueue_Ysteps_counter, &y_steps_counter);
+
+					reached_state = false;
+					xQueueOverwrite(xQueue_reached_state, &reached_state);
+
+					xQueuePeek(xQueueState, &state, 0);
+					if(state != 2) {
+						abort_cutting = true;
+					}
 				}
 			}
 
@@ -167,42 +147,30 @@ void Motor_control(void *argument){
 			while(reached_state == false){
 				xQueuePeek(xQueue_reached_state, &reached_state, pdMS_TO_TICKS(1));
 				xQueuePeek(xQueueState, &state, 0);
-				if((state != 2) && (state != 3)){
+				if(state == 3){
+					vTaskDelay(pdMS_TO_TICKS(1));
+					continue;
+				}
+				if(state != 2) {
 					break;
 				}
 			}
-
-			if((state == 2) || (state == 3)){
-				last_completed_point = (int32_t)number_of_points - 1;
-				if((last_completed_point >= 0) && (g_tool_end_indices != NULL)){
-					uint32_t last_pt = (uint32_t)last_completed_point;
-
-					// Pause after arriving at the first point of the last tool (handles 1-point last tool)
-					uint32_t tool_first = (current_tool_for_delay == 0) ? 0 :
-										 (g_tool_end_indices[current_tool_for_delay - 1] + 1);
-					if(last_pt == tool_first){
-						vTaskDelay(pdMS_TO_TICKS(MS_DELAY_INBETWEEN_TOOLS));
-					}
-
-					// Pause after the last point of the last tool
-					if((current_tool_for_delay < g_total_tools) && (last_pt == g_tool_end_indices[current_tool_for_delay])){
-						vTaskDelay(pdMS_TO_TICKS(MS_DELAY_INBETWEEN_TOOLS));
-					}
-
-					while((next_tool_to_report < g_total_tools) &&
-							((uint32_t)last_completed_point >= g_tool_end_indices[next_tool_to_report])){
-						next_tool_to_report++;
-						send_progress_update(next_tool_to_report, g_total_tools);
-					}
-				}
-			}
 			
-			//Signal cutting complete if all points were processed
+			//turn pressure washer off while the maching resets
+			pressure_washer_on = false;
+			xQueueOverwrite(xQueue_pressure_washer_on, &pressure_washer_on);
+
+			//Pause, send final progress report, and signal complete
 			xQueuePeek(xQueueState, &state, 0);
-			if((state == 2) || (state == 3)){
+			if(state == 2){
+				vTaskDelay(pdMS_TO_TICKS(MS_DELAY_INBETWEEN_TOOLS));
+				send_progress_update(g_total_tools, g_total_tools);
 				bool cutting_complete = true;
 				xQueueOverwrite(xQueue_cutting_complete, &cutting_complete);
 			}
-		}
-	}	
+			
+		} else {
+			vTaskDelay(pdMS_TO_TICKS(100));
+		}	
+	}
 }

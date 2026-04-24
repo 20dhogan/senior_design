@@ -19,16 +19,27 @@ typedef struct {
 	} Point_t;
 
 typedef struct {
-			Point_t *points;
-			size_t   count;
-} Toolpath_t;
-	
-extern Toolpath_t g_toolpath;
+	Point_t  *points;
+	uint16_t  count;
+} Tool_t;
+
+extern Tool_t    *g_tools;
+extern uint16_t   g_total_tools;
 
 #define MAX_X_STEPS 75000
 #define MAX_Y_STEPS 75000
-#define MAX_Z_STEPS 30000
-#define MS_DELAY_INBETWEEN_TOOLS 3000
+#define MAX_Z_STEPS 13000;
+#define MS_DELAY_INBETWEEN_TOOLS 1000
+#define SPEED_1 102400
+#define SPEED_2 51200
+#define SPEED_3 25600
+#define SPEED_4 12800
+#define SPEED_5 6400
+#define SPEED_6 3200
+#define SPEED_7 1600
+#define SPEED_8 800
+#define SPEED_9 400
+#define SPEED_10 200
 
 //function delorations
 //TIMER**************************************
@@ -37,6 +48,7 @@ void TIM4_IRQHandler(void);
 void delay_init(void);
 static inline void delay_us(uint32_t us);
 void main_timer_function();
+uint16_t speed_one_to_ten(int speed);
 
 //UART***************************************
 void USART3_Init(void);

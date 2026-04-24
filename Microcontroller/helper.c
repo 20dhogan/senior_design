@@ -110,37 +110,62 @@ void main_timer_function(){
 	
 	//Peek from queues
 		xQueuePeekFromISR(xQueueState, &state);
+		if(state != 2){
+			//Always clear segment-local ISR timing context outside cutting state.
+			ticks_remaining = 0;
+		}
 		//Put body of interrupt here
 		switch (state){
 			case 0:
 				//reset machine
 				xQueuePeekFromISR(xQueueReset, &reset);
 				if(!reset){
-					if((gpio_Read(GPIOA, 0)) || (gpio_Read(GPIOA, 1)) || (gpio_Read(GPIOA, 4))){
-						if(gpio_Read(GPIOA, 0)){ //x axis limit has not been hit
-							motor_pulse(0, true);
+					
+					if(gpio_Read(GPIOA, 4)){ //z axis limit has not been hit
+						motor_pulse(2, false);
+					} else {						
+						if( (gpio_Read(GPIOA, 0)) || (gpio_Read(GPIOA, 1)) || (gpio_Read(GPIOA, 4)) ){
+							if(gpio_Read(GPIOA, 0)){ //x axis limit has not been hit
+								motor_pulse(0, true);
+							}
+							if(gpio_Read(GPIOA, 1)){ //y axis limit has not been hit
+								motor_pulse(1, false);
+							}
+						} else {
+							//machine is in the the home position
+							reset = true;
+							int32_t x_position = 0;
+							int32_t y_position = 0;
+							int32_t z_position = 0;
+							uint32_t zero_u32 = 0;
+							bool reached_true = true;
+							xQueueOverwriteFromISR(xQueueReset, &reset, pdFALSE);
+							xQueueOverwriteFromISR(xQueueXStepPosition, &x_position, pdFALSE);
+							xQueueOverwriteFromISR(xQueueYStepPosition, &y_position, pdFALSE);
+							xQueueOverwriteFromISR(xQueueZStepPosition, &z_position, pdFALSE);
+							xQueueOverwriteFromISR(xQueue_Xsteps_to_move, &zero_u32, pdFALSE);
+							xQueueOverwriteFromISR(xQueue_Ysteps_to_move, &zero_u32, pdFALSE);
+							xQueueOverwriteFromISR(xQueue_Xsteps_counter, &zero_u32, pdFALSE);
+							xQueueOverwriteFromISR(xQueue_Ysteps_counter, &zero_u32, pdFALSE);
+							xQueueOverwriteFromISR(xQueue_number_of_ticks, &zero_u32, pdFALSE);
+							xQueueOverwriteFromISR(xQueue_reached_state, &reached_true, pdFALSE);
 						}
-						if(gpio_Read(GPIOA, 1)){ //y axis limit has not been hit
-							motor_pulse(1, false);
-						}
-						if(gpio_Read(GPIOA, 4)){ //z axis limit has not been hit
-							motor_pulse(2, false);
-						}
-					}else{
-						//machine is in the the home position
-						reset = true;
-						int32_t x_position = 0;
-						int32_t y_position = 0;
-						int32_t z_position = 3000;
-						xQueueOverwriteFromISR(xQueueReset, &reset, pdFALSE);
-						xQueueOverwriteFromISR(xQueueXStepPosition, &x_position, pdFALSE);
-						xQueueOverwriteFromISR(xQueueYStepPosition, &y_position, pdFALSE);
-						xQueueOverwriteFromISR(xQueueZStepPosition, &z_position, pdFALSE);
 					}
-				}
+				}				
 				
 			break;
 			
+			case 1:
+				int32_t z_position = 0;
+				xQueuePeekFromISR(xQueueZStepPosition, &z_position);
+				if(z_position > 0){
+					motor_pulse(2, true);
+					z_position--;
+					xQueueOverwriteFromISR(xQueueZStepPosition, &z_position, pdFALSE);
+				}
+			break;
+				
+				
 			case 2:
 				//peak from queues
 				xQueuePeekFromISR(xQueue_reached_state, &reached_state);
@@ -218,3 +243,52 @@ void main_timer_function(){
 			
 		}
 }
+
+	uint16_t speed_one_to_ten(int speed)
+	{
+		uint16_t return_speed = 0;
+		switch(speed)
+		{
+			case 1:
+				return_speed = SPEED_1;
+			break;
+			
+			case 2:
+				return_speed = SPEED_2;
+			break;
+			
+			case 3:
+				return_speed = SPEED_3;
+			break;
+			
+			case 4:
+				return_speed = SPEED_4;
+			break;
+			
+			case 5:
+				return_speed = SPEED_5;
+			break;
+			
+			case 6:
+				return_speed = SPEED_6;
+			break;
+			
+			case 7:
+				return_speed = SPEED_7;
+			break;
+			
+			case 8:
+				return_speed = SPEED_8;
+			break;
+			
+			case 9:
+				return_speed = SPEED_9;
+			break;
+			
+			case 10:
+				return_speed = SPEED_10;
+			break;
+		}
+		return return_speed;
+}
+

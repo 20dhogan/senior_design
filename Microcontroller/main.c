@@ -15,6 +15,8 @@ volatile QueueHandle_t xQueue_reached_state = NULL;
 volatile QueueHandle_t xQueue_x_cw = NULL;
 volatile QueueHandle_t xQueue_y_cw = NULL;
 volatile QueueHandle_t xQueue_cutting_complete = NULL;
+volatile QueueHandle_t xQueue_pressure_washer_on = NULL;
+volatile QueueHandle_t xQueueSpeed = NULL;
 
 
 int main(void){
@@ -37,6 +39,8 @@ int main(void){
     xQueue_x_cw = xQueueCreate(1, sizeof(bool));
 	xQueue_y_cw = xQueueCreate(1, sizeof(bool));
 	xQueue_cutting_complete = xQueueCreate(1, sizeof(bool));
+	xQueue_pressure_washer_on = xQueueCreate(1, sizeof(bool));
+	xQueueSpeed = xQueueCreate(1, sizeof(uint16_t));
 
 	uint8_t init_state = 0;
 	bool init_reset = false;
@@ -46,6 +50,7 @@ int main(void){
 	uint32_t init_u32 = 0;
 	bool init_true = true;
 	bool init_false = false;
+	uint16_t init_speed = SPEED_1;
 
 	xQueueOverwrite(xQueueState, &init_state);
 	xQueueOverwrite(xQueueReset, &init_reset);
@@ -61,7 +66,8 @@ int main(void){
 	xQueueOverwrite(xQueue_x_cw, &init_true);
 	xQueueOverwrite(xQueue_y_cw, &init_true);
 	xQueueOverwrite(xQueue_cutting_complete, &init_false);
-	
+	xQueueOverwrite(xQueue_pressure_washer_on, &init_false);
+	xQueueOverwrite(xQueueSpeed, &init_speed);
 	
 	if((xQueueState && xQueueUART) != NULL){
 			prvSetupHardware();
@@ -87,7 +93,7 @@ int main(void){
 			xTaskCreate(
 				Pressure_washer_control,
 				"This task contolls when the pressure washer turns on and off",
-				128,
+				256,
 				NULL,
 				1,
 				&xHandlePressure_washer_control

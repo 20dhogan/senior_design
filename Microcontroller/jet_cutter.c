@@ -36,8 +36,8 @@ void TIM4_Init(void){
 	TIM4->PSC = 0; // PRESCALAR
 	//TIM4->ARR = 99; //ARR = (1,000,000/f_iqr) - 1
   //TIM4->CCR1 = 99 / 2;
-	TIM4->ARR = 999;
-	TIM4->CCR1 = 999/2;
+	TIM4->ARR = 10000;
+	TIM4->CCR1 = 10000/2;
 	
 	//CONFIGURE CHANNELS
 	TIM4->CCMR1 &= ~TIM_CCMR1_OC1M;
@@ -89,11 +89,11 @@ void motor_and_sensor_init(void){
 	GPIOC->PUPDR |= 0x55540000; //inputs set as pull up */
 	
 	// Configure GPIOC pins 0�8 as outputs, 9�15 as inputs
-	GPIOC->MODER &= ~(0x0000FFFF);
+	GPIOC->MODER &= ~(0x0003FFFF);
 	GPIOC->MODER |=  (0x00015555);
 
 	// Enable pull-ups on GPIOC pins 9�15
-	GPIOC->PUPDR &= ~(0xFFFF0000);
+	GPIOC->PUPDR &= ~(0xFFFC0000);
 	GPIOC->PUPDR |=  (0x55540000);
   
 	//Set pins for limit switches
