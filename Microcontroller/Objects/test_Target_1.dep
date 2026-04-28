@@ -1,9 +1,9 @@
 Dependencies for Project 'test', Target 'Target_1': (DO NOT MODIFY !)
 CompilerVersion: 6220000::V6.22::ARMCLANG
 F (.\helper.c)(0x69E02992)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/helper.o -MMD)
-I (jet_cutter.h)(0x69E7D309)
+I (jet_cutter.h)(0x69F0279F)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -19,9 +19,9 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\task.h)(0x6784421E)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\list.h)(0x6784421E)
 F (.\main.c)(0x69D31E2D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/main.o -MMD)
-I (jet_cutter.h)(0x69E7D309)
+I (jet_cutter.h)(0x69F0279F)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -37,9 +37,9 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\task.h)(0x6784421E)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\list.h)(0x6784421E)
 F (.\usart.c)(0x69B21066)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/usart.o -MMD)
-I (jet_cutter.h)(0x69E7D309)
+I (jet_cutter.h)(0x69F0279F)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -55,9 +55,9 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\task.h)(0x6784421E)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\list.h)(0x6784421E)
 F (.\jet_cutter.c)(0x69D84E55)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/jet_cutter.o -MMD)
-I (jet_cutter.h)(0x69E7D309)
+I (jet_cutter.h)(0x69F0279F)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -72,11 +72,11 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\queue.h)(0x6784421E)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\task.h)(0x6784421E)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\list.h)(0x6784421E)
-F (.\jet_cutter.h)(0x69E7D309)()
-F (.\STM32MP_communication.c)(0x69E02AE3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/stm32mp_communication.o -MMD)
-I (jet_cutter.h)(0x69E7D309)
+F (.\jet_cutter.h)(0x69F0279F)()
+F (.\STM32MP_communication.c)(0x69EBCE19)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/stm32mp_communication.o -MMD)
+I (jet_cutter.h)(0x69F0279F)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -92,9 +92,9 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\task.h)(0x6784421E)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\list.h)(0x6784421E)
 F (.\Motor_control.c)(0x69BD85E2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/motor_control.o -MMD)
-I (jet_cutter.h)(0x69E7D309)
+I (jet_cutter.h)(0x69F0279F)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -110,9 +110,9 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\task.h)(0x6784421E)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\list.h)(0x6784421E)
 F (.\Pressure_washer_control.c)(0x69E7D6F3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/pressure_washer_control.o -MMD)
-I (jet_cutter.h)(0x69E7D309)
+I (jet_cutter.h)(0x69F0279F)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -129,7 +129,7 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\list.h)(0x6784421E)
 F (C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Source/clib_os.c)(0x6784421E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/clib_os.o -MMD)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -151,7 +151,7 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include\cmsi
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include\cmsis_armclang.h)(0x664C9D68)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\RTOS2\Include\os_tick.h)(0x664C9D68)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -185,7 +185,7 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include\core_cm4.h)(0x664C9D68)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x66F43368)
 F (C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Source/freertos_evr.c)(0x6784421E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/freertos_evr.o -MMD)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -194,7 +194,7 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6784421E)
 F (C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/event_groups.c)(0x6784421E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/event_groups.o -MMD)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -212,7 +212,7 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\event_groups.h)(0x6784421E)
 F (C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/list.c)(0x6784421E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/list.o -MMD)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -227,7 +227,7 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\list.h)(0x6784421E)
 F (C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F/port.c)(0x6784421F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/port.o -MMD)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -243,7 +243,7 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\list.h)(0x6784421E)
 F (C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/MemMang/heap_4.c)(0x6784421F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/heap_4.o -MMD)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -259,7 +259,7 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\list.h)(0x6784421E)
 F (C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/queue.c)(0x67844220)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/queue.o -MMD)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -276,7 +276,7 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\queue.h)(0x6784421E)
 F (C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/tasks.c)(0x67844220)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/tasks.o -MMD)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -294,7 +294,7 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\stack_macros.h)(0x6784421E)
 F (C:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/timers.c)(0x67844220)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I C:/Users/easto/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.1.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include-IC:/Users/Drew/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="540" -DSTM32L476xx -D_RTE_-o ./objects/timers.o -MMD)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\FreeRTOS.h)(0x6784421E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x69B1FAF9)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x69EBCEAE)
 I (RTE\_Target_1\RTE_Components.h)(0x67F6B552)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x66F43368)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x66F43367)
@@ -310,4 +310,4 @@ I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\includ
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\list.h)(0x6784421E)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\queue.h)(0x6784421E)
 I (C:\Users\Drew\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.1.0\Source\include\timers.h)(0x6784421E)
-F (RTE/RTOS/FreeRTOSConfig.h)(0x69B1FAF9)()
+F (RTE/RTOS/FreeRTOSConfig.h)(0x69EBCEAE)()

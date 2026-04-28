@@ -22,7 +22,7 @@
 #include <sstream>
 
 #define X_STEP_LIMIT 55000
-#define Y_STEP_LIMIT 54000
+#define Y_STEP_LIMIT 54500
 
 struct Point {
     int32_t x;
@@ -252,6 +252,8 @@ static bool parse_dxf_to_all_tools(const char* path, ALL_TOOLS& all_tools_out)
     std::string code, value;
     bool in_entities_section = false;
     bool in_lwpolyline = false;
+    bool in_polyline = false;     // Old-format POLYLINE support
+    bool in_vertex = false;        // Within a POLYLINE, reading VERTEX
     double cord_in_inches = 0;
 
     SINGLE_TOOL_POINTS current_tool_points;
@@ -267,43 +269,78 @@ static bool parse_dxf_to_all_tools(const char* path, ALL_TOOLS& all_tools_out)
             in_entities_section = false;
         }
 
-        // end of polyline
-        if (in_lwpolyline && (code == "  0")) {
-            all_tools.push_back(current_tool_points);
-            in_lwpolyline = false;
+        // end of LWPOLYLINE or POLYLINE
+        if ((in_lwpolyline || in_polyline) && (code == "  0")) {
+            if (value == "SEQEND" && in_polyline) {
+                // End of old-format POLYLINE
+                in_polyline = false;
+                in_vertex = false;
+                all_tools.push_back(current_tool_points);
+                current_tool_points.clear();
+            } else if (in_lwpolyline) {
+                // End of LWPOLYLINE (different entity follows)
+                all_tools.push_back(current_tool_points);
+                current_tool_points.clear();
+                in_lwpolyline = false;
+            }
         }
 
-        // beginning of polyline
+        // beginning of LWPOLYLINE
         if (in_entities_section && (code == "  0") && (value == "LWPOLYLINE")) {
             current_tool_points.clear();
             in_lwpolyline = true;
-        } else {
-            if (in_lwpolyline && (code == " 10")) {
-                Point current_point{};
-                cord_in_inches = std::stod(value);
-                current_point.x = static_cast<int32_t>(std::llround(cord_in_inches * dxf_unit_to_um));
+        }
+        
+        // beginning of old-format POLYLINE
+        if (in_entities_section && (code == "  0") && (value == "POLYLINE")) {
+            current_tool_points.clear();
+            in_polyline = true;
+            in_vertex = false;
+        }
 
-                //check if point is out of bounds of CNC X limits
-                if (current_point.x < 0 || current_point.x > X_STEP_LIMIT) {
-                    std::cerr << "Warning: point x=" << current_point.x << " is out of bounds. Limit is"
-                     << X_STEP_LIMIT << " steps). Clamping.\n";
+        // VERTEX entity within POLYLINE
+        if (in_polyline && (code == "  0") && (value == "VERTEX")) {
+            in_vertex = true;
+        }
+
+        // Handle coordinate codes
+        if ((in_lwpolyline || in_vertex) && (code == " 10")) {
+            Point current_point{};
+            cord_in_inches = std::stod(value);
+            current_point.x = static_cast<int32_t>(std::llround(cord_in_inches * dxf_unit_to_um));
+
+            //check if point is out of bounds of CNC X limits
+            if (current_point.x < 0 || current_point.x > X_STEP_LIMIT) {
+                std::cerr << "Warning: point x=" << current_point.x << " is out of bounds. Limit is"
+                 << X_STEP_LIMIT << " steps). Clamping.\n";
+                if (current_point.x < 0) {
+                    current_point.x = 0;
+                } else {
                     current_point.x = X_STEP_LIMIT;
                 }
+            }
 
-                if (!std::getline(file, code)) break;
-                if (!std::getline(file, value)) break;
+            if (!std::getline(file, code)) break;
+            if (!std::getline(file, value)) break;
 
-                if (code == " 20") {
-                    cord_in_inches = std::stod(value);
-                    current_point.y = static_cast<int32_t>(std::llround(cord_in_inches * dxf_unit_to_um));
-                    current_tool_points.push_back(current_point);
-                }
+            if (code == " 20") {
+                cord_in_inches = std::stod(value);
+                current_point.y = static_cast<int32_t>(std::llround(cord_in_inches * dxf_unit_to_um));
 
                 //check if point is out of bounds of CNC Y limits
                 if (current_point.y < 0 || current_point.y > Y_STEP_LIMIT) {
                     std::cerr << "Warning: point y=" << current_point.y << " is out of bounds. Limit is"
                      << Y_STEP_LIMIT << " steps). Clamping.\n";
-                    current_point.y = Y_STEP_LIMIT;
+                    if (current_point.y < 0) {
+                        current_point.y = 0;
+                    } else {
+                        current_point.y = Y_STEP_LIMIT;
+                    }
+                }
+
+                current_tool_points.push_back(current_point);
+                if (in_vertex) {
+                    in_vertex = false;  // Done with this VERTEX
                 }
             }
         }

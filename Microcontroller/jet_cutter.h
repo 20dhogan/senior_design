@@ -29,7 +29,7 @@ extern uint16_t   g_total_tools;
 #define MAX_X_STEPS 75000
 #define MAX_Y_STEPS 75000
 #define MAX_Z_STEPS 13000;
-#define MS_DELAY_INBETWEEN_TOOLS 1000
+#define MS_DELAY_INBETWEEN_TOOLS 2000
 #define SPEED_1 102400
 #define SPEED_2 51200
 #define SPEED_3 25600
